@@ -1,8 +1,361 @@
-@media screen and (min-width: 640px) {
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 400;
+  src: local("Montserrat-Regular"),
+    url("../fonts/Montserrat-Regular.ttf") format("truetype");
 }
 
-@media screen and (min-width: 640px) and (orientation: landscape) {
+@font-face {
+  font-family: "ForcedSquare";
+  font-weight: 400;
+  src: local("ForcedSquare-Regular"),
+    url("../fonts/ForcedSquare-Regular.ttf") format("truetype");
 }
 
-@media screen and (min-width: 1024px) {
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 500;
+  src: local("Montserrat-Medium"),
+    url("../fonts/Montserrat-Medium.ttf") format("truetype");
+}
+
+.font-forcedsquare {
+  font-family: "ForcedSquare", sans-serif;
+}
+
+body {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+#container {
+  perspective: 1200px;
+}
+
+/* --------- BOX BASE STYLE --------- */
+.box {
+  transform: scale(0.2) translateY(60px);
+  opacity: 0;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  will-change: transform, opacity; /* Tối ưu trình duyệt */
+}
+
+/* CONTENT INSIDE BOX */
+.box .content {
+  font-size: 28px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  line-height: 140px;
+  z-index: 2;
+  position: relative;
+}
+
+/* --------- FLARE EFFECT --------- */
+.box .flare {
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 300%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.box.active .flare {
+  animation: flareMove 0.6s ease-out forwards;
+}
+
+/* --------- ACTIVE EFFECT --------- */
+.box.active {
+  transform: scale(1.1) translateY(0); /* Dịch chuyển nhẹ và mở rộng */
+  opacity: 1;
+  animation: bounce 0.4s cubic-bezier(0.2, 1, 0.3, 1) forwards,
+    flashGlow 0.3s ease-out, shake 0.3s ease-in-out;
+}
+
+/* LIGHT GLOW PULSE */
+.box.active::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2),
+    transparent 70%
+  );
+  border-radius: 20px;
+  animation: glowPulse 0.8s ease-out forwards;
+  z-index: 0;
+}
+
+/* --------- SPECIAL CARDS (5,10,15...) --------- */
+.box.special {
+  background: radial-gradient(circle at top left, #ffcc00, #cc6600);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  animation: pulseSpecial 1.5s infinite alternate;
+}
+
+.box.special::before {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  top: -25%;
+  left: -25%;
+  background: radial-gradient(
+    ellipse,
+    rgba(255, 255, 150, 0.15),
+    transparent 70%
+  );
+  animation: pulseLight 2s infinite;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* --------- ANIMATIONS --------- */
+@keyframes bounce {
+  0% {
+    transform: scale(0.4) translate(-60px, 100px); /* Đưa thẻ vào vị trí bắt đầu */
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) translate(15px, -10px); /* Mở rộng nhẹ và dịch chuyển */
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translate(30px, 0); /* Trở lại vị trí chính */
+    opacity: 1;
+  }
+}
+
+@keyframes flareMove {
+  0% {
+    left: -150%;
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes flashGlow {
+  0% {
+    box-shadow: 0 0 40px 20px rgba(255, 255, 255, 0.9);
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-4px);
+  }
+  40%,
+  80% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes pulseLight {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0.2;
+  }
+}
+
+@keyframes pulseSpecial {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(255, 215, 0, 1);
+  }
+}
+
+.ray-light-effect {
+  inset: 0;
+  transform: scaleY(0);
+  position: absolute;
+}
+
+.ray-light-effect-active {
+  animation: rayMove 1.8s cubic-bezier(0.66, 0, 0.34, 1) 0.04s forwards,
+    rayFlash 0.4s ease-out;
+}
+
+@keyframes rayMove {
+  0% {
+    transform: scaleY(0);
+    filter: brightness(0.5);
+  }
+  60% {
+    transform: scaleY(1.05);
+    filter: brightness(2);
+  }
+  100% {
+    transform: scaleY(1);
+    filter: brightness(1);
+  }
+}
+
+@keyframes rayFlash {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.ray_light_top {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.ray_light_top-active {
+  animation: rayTopActive 1.8s cubic-bezier(0.66, 0, 0.34, 1) forwards;
+}
+
+@keyframes rayTopActive {
+  0% {
+    top: 50%;
+    transform: translateY(-100%);
+    opacity: 0;
+    filter: blur(6px);
+  }
+  70% {
+    top: -4%;
+    opacity: 1;
+    filter: brightness(1.8);
+  }
+  100% {
+    top: 0%;
+    transform: translateY(0);
+    opacity: 1;
+    filter: none;
+  }
+}
+.ray_light_bottom {
+  width: 100%;
+  position: absolute;
+  bottom: 50%;
+  opacity: 0;
+}
+
+.ray_light_bottom-active {
+  animation: rayBottomActive 1.8s cubic-bezier(0.66, 0, 0.34, 1) forwards;
+}
+
+@keyframes rayBottomActive {
+  0% {
+    bottom: 50%;
+    opacity: 0;
+    filter: blur(6px);
+  }
+  70% {
+    bottom: -3%;
+    opacity: 1;
+    filter: brightness(1.8);
+  }
+  100% {
+    bottom: 0%;
+    opacity: 1;
+    filter: none;
+  }
+}
+
+.ray-light-effect::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 80%
+  );
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  pointer-events: none;
+}
+
+.ray-light-effect-active::after {
+  opacity: 1;
+}
+
+.flare-effect-active {
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  animation: blingSweep 1.5s forwards;
+}
+
+@keyframes blingSweep {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) rotate(25deg);
+    opacity: 0;
+  }
 }

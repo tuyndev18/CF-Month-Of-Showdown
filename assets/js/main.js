@@ -1,26 +1,92 @@
-// lấy chiều cao màn hình không gồm 2 thanh điều hướng bên trên và bên dưới
-const setHeight = () => {
-  const mainMobile = document.querySelector("#main_mobile");
-  if (mainMobile) {
-    document.querySelector("#main_mobile").style.height =
-      window.innerHeight + "px";
-  }
+const targetDiv = document.querySelector("#event-second-node");
+const scrollableFirst = document.getElementById("container");
+const boxes = document.querySelectorAll(".box");
+const flareEffectNode = document.querySelectorAll(".flare-item-effect");
+const rayLightContainer = document.querySelectorAll(".ray-light-container");
+
+const timeoutEffect = [];
+
+const options = {
+  root: null, // sử dụng cửa sổ trình duyệt làm vùng gốc
+  rootMargin: "0px", // không có margin
+  threshold: 0, // khi ít nhất 50% thẻ div xuất hiện trong cửa sổ
 };
 
-setHeight();
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      addEffect();
+      console.log("Div xuất hiện trên màn hình!");
+    } else {
+      removeEffect();
+      console.log("Div ra ngoài màn hình!");
+    }
+  });
+}, options);
 
-window.onload = function (e) {
-  setHeight();
-};
+observer.observe(scrollableFirst);
 
-// reload lại page khi xoay ngang màn hình
-window.addEventListener("orientationchange", function () {
-  var afterOrientationChange = function () {
-    window.location.reload();
-    setHeight();
-    window.removeEventListener("resize", afterOrientationChange);
-  };
-  window.addEventListener("resize", afterOrientationChange);
-});
+function addEffect() {
+  rayLightEffect(true);
+  flareEffect(true);
+  boxEffect(true);
+}
 
-$(document).ready(function () {});
+function boxEffect(isIntersecting) {
+  boxes.forEach((box, index) => {
+    if (isIntersecting) {
+      timeoutEffect.push(
+        setTimeout(() => {
+          box.classList.add("active");
+        }, index * 100 + 200)
+      );
+    } else {
+      box.classList.remove("active");
+    }
+  });
+}
+
+function flareEffect(isIntersecting) {
+  flareEffectNode.forEach((flareNode, index) => {
+    if (isIntersecting) {
+      timeoutEffect.push(
+        setTimeout(() => {
+          flareNode.classList.add("flare-effect-active");
+        }, index * 250 + 2800)
+      );
+    } else {
+      flareNode.classList.remove("flare-effect-active");
+    }
+  });
+}
+
+function rayLightEffect(isIntersecting) {
+  rayLightContainer.forEach((rayLightNode, index) => {
+    const rayLight = rayLightNode.querySelector(".ray-light-effect");
+    const rayTopLight = rayLightNode.querySelector(".ray_light_top");
+    const rayBottomLight = rayLightNode.querySelector(".ray_light_bottom");
+    if (isIntersecting) {
+      timeoutEffect.push(
+        setTimeout(() => {
+          rayLight.classList.add("ray-light-effect-active");
+          rayTopLight.classList.add("ray_light_top-active");
+          rayBottomLight.classList.add("ray_light_bottom-active");
+        }, index * 150 + 2000)
+      );
+    } else {
+      rayLight.classList.remove("ray-light-effect-active");
+      rayTopLight.classList.remove("ray_light_top-active");
+      rayBottomLight.classList.remove("ray_light_bottom-active");
+    }
+  });
+}
+
+function removeEffect() {
+  timeoutEffect.forEach((timeout) => {
+    clearTimeout(timeout);
+  });
+  timeoutEffect.length = 0;
+  rayLightEffect(false);
+  flareEffect(false);
+  boxEffect(false);
+}
