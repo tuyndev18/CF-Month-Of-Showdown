@@ -27,11 +27,14 @@ body {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
 }
 
+.background-main {
+  background-image: url("../images/bg_main.jpg");
+}
+
 #container {
   perspective: 1200px;
 }
 
-/* --------- BOX BASE STYLE --------- */
 .box {
   transform: scale(0.2) translateY(60px);
   opacity: 0;
@@ -41,7 +44,6 @@ body {
   will-change: transform, opacity; /* Tối ưu trình duyệt */
 }
 
-/* CONTENT INSIDE BOX */
 .box .content {
   font-size: 28px;
   color: white;
@@ -52,7 +54,6 @@ body {
   position: relative;
 }
 
-/* --------- FLARE EFFECT --------- */
 .box .flare {
   position: absolute;
   top: 0;
@@ -75,15 +76,12 @@ body {
   animation: flareMove 0.6s ease-out forwards;
 }
 
-/* --------- ACTIVE EFFECT --------- */
 .box.active {
-  transform: scale(1.1) translateY(0); /* Dịch chuyển nhẹ và mở rộng */
+  transform: scale(1);
   opacity: 1;
-  animation: bounce 0.4s cubic-bezier(0.2, 1, 0.3, 1) forwards,
-    flashGlow 0.3s ease-out, shake 0.3s ease-in-out;
+  animation: flashGlow 0.3s ease-out, shake 0.3s ease-in-out;
 }
 
-/* LIGHT GLOW PULSE */
 .box.active::after {
   content: "";
   position: absolute;
@@ -101,7 +99,6 @@ body {
   z-index: 0;
 }
 
-/* --------- SPECIAL CARDS (5,10,15...) --------- */
 .box.special {
   background: radial-gradient(circle at top left, #ffcc00, #cc6600);
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
@@ -123,22 +120,6 @@ body {
   animation: pulseLight 2s infinite;
   border-radius: 50%;
   z-index: 0;
-}
-
-/* --------- ANIMATIONS --------- */
-@keyframes bounce {
-  0% {
-    transform: scale(0.4) translate(-60px, 100px); /* Đưa thẻ vào vị trí bắt đầu */
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.2) translate(15px, -10px); /* Mở rộng nhẹ và dịch chuyển */
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1) translate(30px, 0); /* Trở lại vị trí chính */
-    opacity: 1;
-  }
 }
 
 @keyframes flareMove {
@@ -357,5 +338,63 @@ body {
   100% {
     transform: translateX(100%) rotate(25deg);
     opacity: 0;
+  }
+}
+
+.letter {
+  opacity: 0;
+  transform: translateY(-200px) rotate(-10deg) scale(1.2);
+  animation: dropSmash 0.9s forwards cubic-bezier(0.8, 0, 0.2, 1.4);
+}
+
+.title-thach {
+  animation-delay: 0.1s;
+}
+.title-chien {
+  animation-delay: 0.15s;
+}
+.title-binh {
+  animation-delay: 0.2s;
+}
+
+@keyframes dropSmash {
+  0% {
+    opacity: 0;
+    transform: translateY(-200px) rotate(-10deg) scale(1.2);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0) rotate(3deg) scale(1.05);
+  }
+  75% {
+    transform: translateY(0) rotate(-2deg) scale(0.98);
+  }
+  85% {
+    transform: translateY(0) rotate(1deg) scale(1.02);
+  }
+  92% {
+    transform: translateY(0) rotate(-0.5deg) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+.title_bg {
+  opacity: 0;
+}
+
+.title_bg-active {
+  animation: titleBgActive 0.35s 0.85s linear forwards;
+}
+
+@keyframes titleBgActive {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
