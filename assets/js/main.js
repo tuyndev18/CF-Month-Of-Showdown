@@ -1,6 +1,7 @@
 const targetDiv = document.querySelector("#event-second-node");
 const headerSession = document.querySelector("#header-session");
 const modeRank = document.querySelector(".mode-rank-effect");
+const modeRankCharacter = document.querySelectorAll(".mode-rank-character");
 const modeRankNode = document.querySelector(".mode-rank-node");
 const headerTop = document.querySelector(".header-top");
 const scrollableFirst = document.getElementById("container");
@@ -69,8 +70,14 @@ const observer2 = new IntersectionObserver(
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         modeRank.classList.add("mode-rank-effect-active");
+        modeRankCharacter.forEach((character) => {
+          character.classList.add("mode-rank-character-active");
+        });
       } else {
         modeRank.classList.remove("mode-rank-effect-active");
+        modeRankCharacter.forEach((character) => {
+          character.classList.remove("mode-rank-character-active");
+        });
       }
     });
   },
@@ -89,13 +96,13 @@ const observer3 = new IntersectionObserver(
         lstFlare5.forEach((flareNode, index) => {
           timeoutEffect.push(
             setTimeout(() => {
-              flareNode.classList.add("flare-effect-active");
+              flareNode.classList.add("flare-effect-active2");
             }, index * 150 + 300)
           );
         });
       } else {
         lstFlare5.forEach((flareNode) => {
-          flareNode.classList.remove("flare-effect-active");
+          flareNode.classList.remove("flare-effect-active2");
         });
         timeoutEffect.forEach((timeout) => {
           clearTimeout(timeout);

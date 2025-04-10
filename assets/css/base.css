@@ -324,7 +324,24 @@ body {
   );
   transform: rotate(25deg);
   pointer-events: none;
-  animation: blingSweep 1.5s forwards;
+  animation: blingSweep 1.5s 1 forwards;
+}
+
+.flare-effect-active2 {
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  animation: blingSweep 1.25s 3 0.5s forwards alternate;
 }
 
 @keyframes blingSweep {
@@ -579,4 +596,46 @@ body {
 .mode-rank-effect {
   opacity: 0;
   transform: translateY(-75%);
+}
+
+.mode-rank-character {
+  opacity: 1;
+  transform: translateY(75%);
+}
+
+.mode-rank-character-active {
+  animation: bounceSettle1 1.5s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+@keyframes bounceSettle1 {
+  0% {
+    transform: translateY(75%);
+    opacity: 0;
+    filter: blur(2px) contrast(120%);
+  }
+  30% {
+    transform: translateY(0%);
+  }
+  45% {
+    transform: translateY(20%);
+    opacity: 1;
+    filter: blur(0px) contrast(100%);
+  }
+  60% {
+    transform: translateY(0%);
+  }
+  72% {
+    transform: translateY(5%);
+  }
+  82% {
+    transform: translateY(0%);
+  }
+  90% {
+    transform: translateY(3%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+    filter: blur(0px) contrast(100%);
+  }
 }
