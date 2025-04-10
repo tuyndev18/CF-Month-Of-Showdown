@@ -1,671 +1,521 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CF</title>
-    <link rel="stylesheet" href="./assets/css/aos.css" />
-    <link rel="stylesheet" href="./assets/css/base.css" />
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-    <link rel="stylesheet" href="./assets/css/animate.min.css" />
-    <link rel="stylesheet" href="./assets/css/toastify.min.css" />
-  </head>
 
-  <body>
-    <div class="overflow-x-hidden background-main">
-      <div class="h-screen relative">
-        <div class="w-full absolute">
-          <img class="w-full" src="./assets/images/bg_header.png" alt="" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CF</title>
+  <link rel="stylesheet" href="./assets/css/aos.css" />
+  <link rel="stylesheet" href="./assets/css/base.css" />
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="stylesheet" href="./assets/css/animate.min.css" />
+  <link rel="stylesheet" href="./assets/css/toastify.min.css" />
+</head>
 
-        </div>
-        <div
-          class="max-w-[1640px] w-full absolute bottom-0 right-1/2 translate-x-1/2"
-        >
-          <div>
-            <img class="w-full title_bg title_bg-active" src="./assets/images/title_bg.png" alt="" />
-          </div>
-          <div class="absolute w-[18.54%] top-[20.6%] left-[6.4%]">
-            <img class="w-full letter title-thu" src="./assets/images/title_thu.png" alt="" />
-          </div>
-          <div class="absolute w-[31%] top-[22.6%] left-[26.09%]">
-            <img class="w-full letter title-thach" src="./assets/images/title_thach.png" alt="" />
-          </div>
-          <div class="absolute w-[27%] bottom-[23%] right-[31%]">
-            <img class="w-full letter title-chien" src="./assets/images/title_chien.png" alt="" />
-          </div>
-          <div class="absolute w-[21.61%] bottom-[23%] right-[7.3%]">
-            <img class="w-full letter title-binh" src="./assets/images/title_binh.png" alt="" />
-          </div>
-        </div>
+<body>
+  <div class="overflow-x-hidden background-main">
+    <div id="header-session" class="relative h-screen">
+      <div class="absolute w-full">
+        <img class="w-full" src="./assets/images/bg_header.png" alt="" />
+
       </div>
-      <div class="max-w-[1640px] mx-auto w-full relative z-[2]">
-        <div class="w-[94%] mx-auto">
-          <div class="flex items-center space-x-4 mb-[0.5%]">
-            <div>
-              <img src="./assets/images/sk_1.png" alt="" />
-            </div>
-            <div>
-              <img src="./assets/images/sk1_heading.png" alt="" />
-            </div>
-          </div>
-          <div
-            class="flex justify-center space-x-[5%] items-end text-base mb-[1%]"
-          >
-            <h3 class="flex-1 text-[#fff1e7]">
-              Bạn có thể nhận phần thưởng tương ứng bằng cách đăng nhập và điểm
-              danh mỗi ngày trong thời gian diễn ra sự kiện.<br />
-              Sự kiện này là sự kiện đăng nhập điểm danh tích lũy và bạn có thể
-              tham gia điểm danh tổng cộng 26 ngày.<br />
-              Ngay cả khi quá trình đăng nhập điểm danh bị gián đoạn, bạn vẫn có
-              thể tiếp tục nhận được phần thưởng từ số ngày điểm danh cuối cùng
-              trong lần truy cập tiếp theo của bạn.
-            </h3>
-            <h3
-              class="font-medium underline text-[#ff5700] text-2xl font-forcedsquare"
-            >
-              LỊCH SỬ NHẬN
-            </h3>
-          </div>
+      <div class="max-w-[1640px] w-full absolute bottom-0 right-1/2 translate-x-1/2">
+        <div>
+          <img class="w-full title_bg" src="./assets/images/title_bg.png" alt="" />
         </div>
-        <div class="w-full pt-[44%] relative">
-          <div class="absolute inset-0">
-            <img
-              class="w-full h-full"
-              src="./assets/images/frame_t2.png"
-              alt=""
-            />
-          </div>
-          <div
-            class="absolute w-[11%] h-full top-0 left-[40%] ray-light-container"
-          >
-            <div class="ray-light-effect">
-              <img
-                class="w-full h-full"
-                src="./assets/images/ray_light.png"
-                alt=""
-              />
-            </div>
-            <div class="ray_light_top">
-              <img
-                class="w-full"
-                src="./assets/images/ray_light_top.png"
-                alt=""
-              />
-            </div>
-            <div class="ray_light_bottom">
-              <img
-                class="w-full"
-                src="./assets/images/ray_light_bottom.png"
-                alt=""
-              />
-            </div>
-          </div>
-          <div
-            class="absolute w-[11%] h-full top-0 right-[4%] ray-light-container"
-          >
-            <div class="ray-light-effect">
-              <img
-                class="w-full h-full"
-                src="./assets/images/ray_light.png"
-                alt=""
-              />
-            </div>
-            <div class="ray_light_top">
-              <img
-                class="w-full"
-                src="./assets/images/ray_light_top.png"
-                alt=""
-              />
-            </div>
-            <div class="ray_light_bottom">
-              <img
-                class="w-full"
-                src="./assets/images/ray_light_bottom.png"
-                alt=""
-              />
-            </div>
-          </div>
-          <div class="absolute w-[6.5%] bottom-[6.5%] right-[6%]">
-            <img class="w-full" src="./assets/images/character_1.png" alt="" />
-          </div>
-          <div
-            id="container"
-            class="grid grid-cols-10 gap-x-[1%] gap-y-[2%] w-[89%] absolute top-[9%] right-1/2 translate-x-1/2 cursor-pointer"
-          >
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day1_t2.png" alt="" />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day2_t2.png" alt="" />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day3_t2.png" alt="" />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day4_t2.png" alt="" />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div class="absolute inset-0 overflow-hidden">
-                <div class="flare-item-effect"></div>
-              </div>
-              <div>
-                <img
-                  class="w-full"
-                  src="./assets/images/gold_box_5.png"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day6_t2.png" alt="" />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day7_t2.png" alt="" />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day8_t2.png" alt="" />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day9_t2.png" alt="" />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div class="absolute inset-0 overflow-hidden">
-                <div class="flare-item-effect"></div>
-              </div>
-              <div>
-                <img
-                  class="w-full"
-                  src="./assets/images/gold_box_10.png"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day11_t2.png" alt="" />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day12_t2.png" alt="" />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day13_t2.png" alt="" />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day14_t2.png" alt="" />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div class="absolute inset-0 overflow-hidden">
-                <div class="flare-item-effect"></div>
-              </div>
-              <div>
-                <img
-                  class="w-full"
-                  src="./assets/images/gold_box_15.png"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day16_t2.png" alt="" />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day17_t2.png" alt="" />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day18_t2.png" alt="" />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day19_t2.png" alt="" />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div class="absolute inset-0 overflow-hidden">
-                <div class="flare-item-effect"></div>
-              </div>
-              <div>
-                <img
-                  class="w-full"
-                  src="./assets/images/gold_box_20.png"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day21_t2.png" alt="" />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day22_t2.png" alt="" />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day23_t2.png" alt="" />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day24_t2.png" alt="" />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div class="absolute inset-0 overflow-hidden">
-                <div class="flare-item-effect"></div>
-              </div>
-              <div>
-                <img
-                  class="w-full"
-                  src="./assets/images/gold_box_25.png"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="box">
-              <div class="flare"></div>
-              <div>
-                <img class="w-full" src="./assets/images/day26_t2.png" alt="" />
-              </div>
-            </div>
-          </div>
-          <div class="absolute top-0 right-0 h-full">
-            <img
-              class="w-full h-full"
-              src="./assets/images/frame_t22.png"
-              alt=""
-            />
-          </div>
-          <button class="w-[22%] absolute bottom-[6%] right-[15%]">
-            <img class="w-full" src="./assets/images/btn_register.png" alt="" />
-          </button>
+        <div class="absolute w-[18.54%] top-[20.6%] left-[6.4%]">
+          <img class="w-full letter title-thu" src="./assets/images/title_thu.png" alt="" />
         </div>
-      </div>
-      <div
-        id="event-second-node"
-        class="max-w-[1640px] mx-auto w-full relative z-[1] pt-[3%]"
-      >
-        <div class="absolute bottom-0 left-0 w-full">
-          <img class="w-full" src="./assets/images/bg_blue.png" alt="" />
+        <div class="absolute w-[31%] top-[22.6%] left-[26.09%]">
+          <img class="w-full letter title-thach" src="./assets/images/title_thach.png" alt="" />
         </div>
-        <div class="absolute -left-[0.5%] bottom-0 h-[110%] w-[3%]">
-          <img
-            class="w-full h-full"
-            src="./assets/images/ground_1.png"
-            alt=""
-          />
+        <div class="absolute w-[27%] bottom-[23%] right-[31%]">
+          <img class="w-full letter title-chien" src="./assets/images/title_chien.png" alt="" />
         </div>
-        <div class="absolute -right-[0.5%] bottom-0 h-[110%] w-[3%]">
-          <img
-            class="w-full h-full"
-            src="./assets/images/ground_2.png"
-            alt=""
-          />
-        </div>
-        <div class="w-[91%] mx-auto mb-[1%]">
-          <div class="flex items-center space-x-4 mb-[1%] -translate-x-[1%]">
-            <div>
-              <img src="./assets/images/sk_2.png" alt="" />
-            </div>
-            <div>
-              <img src="./assets/images/sk2_heading.png" alt="" />
-            </div>
-          </div>
-          <div class="flex justify-center space-x-[5%] items-end">
-            <h3 class="flex-1 text-[#fff1e7]">
-              Bạn có thể kiếm điểm thưởng thông qua các nhiệm vụ hàng ngày trong
-              thời gian diễn ra sự kiện.<br />
-              Số điểm tối đa nhận được mỗi ngày khi tham gia nhiệm vụ Chơi tích
-              lũy: 80 Điểm. Nhiệm vụ sẽ khởi tạo 00h00 hàng ngày.
-            </h3>
-            <h3
-              class="font-medium underline text-[#ff5700] text-2xl font-forcedsquare"
-            >
-              LỊCH SỬ NHẬN
-            </h3>
-          </div>
-        </div>
-        <div
-          class="w-[91%] mx-auto grid grid-cols-6 gap-[2%] relative cursor-pointer pb-[1%]"
-        >
-          <div class="relative">
-            <img
-              class="w-full"
-              src="./assets/images/box_card_timer.png"
-              alt=""
-            />
-            <h3
-              class="text-[1.6vw] absolute top-[4%] right-[21%] font-bold text-[#ff5700] font-forcedsquare"
-            >
-              10
-            </h3>
-          </div>
-          <div class="relative">
-            <img
-              class="w-full"
-              src="./assets/images/box_card_timer.png"
-              alt=""
-            />
-            <h3
-              class="text-[1.6vw] absolute top-[4%] right-[21%] font-bold text-[#ff5700] font-forcedsquare"
-            >
-              20
-            </h3>
-          </div>
-          <div class="relative">
-            <img
-              class="w-full"
-              src="./assets/images/box_card_timer.png"
-              alt=""
-            />
-            <h3
-              class="text-[1.6vw] absolute top-[4%] right-[21%] font-bold text-[#ff5700] font-forcedsquare"
-            >
-              30
-            </h3>
-          </div>
-          <div class="relative">
-            <img
-              class="w-full"
-              src="./assets/images/box_card_timer.png"
-              alt=""
-            />
-            <h3
-              class="text-[1.6vw] absolute top-[4%] right-[21%] font-bold text-[#ff5700] font-forcedsquare"
-            >
-              40
-            </h3>
-          </div>
-          <div class="relative">
-            <img
-              class="w-full"
-              src="./assets/images/box_card_timer2.png"
-              alt=""
-            />
-            <h3
-              class="text-[1.6vw] absolute top-[4%] right-[21%] font-bold text-[#ff5700] font-forcedsquare"
-            >
-              50
-            </h3>
-          </div>
-          <div class="relative">
-            <img
-              class="w-full"
-              src="./assets/images/box_card_timer2.png"
-              alt=""
-            />
-            <h3
-              class="text-[1.6vw] absolute top-[4%] right-[21%] font-bold text-[#ff5700] font-forcedsquare"
-            >
-              60
-            </h3>
-          </div>
-        </div>
-      </div>
-      <div class="max-w-[1080px] mx-auto w-full relative mb-[2%]">
-        <div class="absolute bottom-0 left-0 w-full">
-          <img class="w-full" src="./assets/images/bg_blue.png" alt="" />
-        </div>
-        <div class="absolute -left-[0.5%] bottom-0 h-[110%] w-[5%]">
-          <img
-            class="w-full h-full"
-            src="./assets/images/ground_1.png"
-            alt=""
-          />
-        </div>
-        <div class="absolute -right-[0.5%] bottom-0 h-[110%] w-[5%]">
-          <img
-            class="w-full h-full"
-            src="./assets/images/ground_2.png"
-            alt=""
-          />
-        </div>
-        <div
-          class="absolute w-[23%] -bottom-[23%] -left-[4%] -translate-x-full"
-        >
-          <img class="w-full" src="./assets/images/character_2.png" alt="" />
-        </div>
-        <div
-          class="absolute w-[23%] -bottom-[23%] -right-[4%] translate-x-full"
-        >
-          <img class="w-full" src="./assets/images/character_3.png" alt="" />
-        </div>
-        <div class="w-[75%] mx-auto flex flex-col items-center pt-[2%]">
-          <div class="w-[80%]">
-            <img class="w-full" src="./assets/images/heading_t4.png" alt="" />
-          </div>
-          <h3 class="mt-[1%] mb-[3%] text-[#fff1e7]">
-            Số điểm tối đa nhận được mỗi ngày khi tham gia nhiệm vụ Rank: 50
-            điểm. Nhiệm vụ sẽ khởi tạo 00h00 hàng ngày.
-          </h3>
-          <div
-            class="w-[80%] grid grid-cols-3 gap-[2%] relative cursor-pointer pb-[1%]"
-          >
-            <div class="relative">
-              <img
-                class="w-full"
-                src="./assets/images/box_card_rank.png"
-                alt=""
-              />
-              <h3
-                class="text-[1.6vw] absolute top-[3.5%] right-[40%] font-bold text-[#ff5700] font-forcedsquare"
-              >
-                01
-              </h3>
-            </div>
-            <div class="relative">
-              <img
-                class="w-full"
-                src="./assets/images/box_card_rank2.png"
-                alt=""
-              />
-              <h3
-                class="text-[1.6vw] absolute top-[3.5%] right-[40%] font-bold text-[#ff5700] font-forcedsquare"
-              >
-                05
-              </h3>
-            </div>
-            <div class="relative">
-              <img
-                class="w-full"
-                src="./assets/images/box_card_rank2.png"
-                alt=""
-              />
-              <h3
-                class="text-[1.6vw] absolute top-[3.5%] right-[40%] font-bold text-[#ff5700] font-forcedsquare"
-              >
-                10
-              </h3>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="max-w-[1620px] mx-auto w-full">
-        <div class="w-[94%] mx-auto mb-[1%]">
-          <div class="flex justify-between mb-3 space-x-5">
-            <div class="flex-1">
-              <div class="flex items-center mb-3 space-x-4">
-                <div>
-                  <img src="./assets/images/sk_3.png" alt="" />
-                </div>
-                <div>
-                  <img src="./assets/images/sk3_heading.png" alt="" />
-                </div>
-              </div>
-              <h3 class="text-[#fff1e7]">
-                Sử dụng điểm thưởng kiếm được thông qua đăng nhập hàng ngày và
-                nhiệm vụ hàng ngày để đổi lấy những vật phẩm đa dạng.
-              </h3>
-            </div>
-            <div class="relative">
-              <img src="./assets/images/my_ccp.png" alt="" />
-              <h3
-                class="font-forcedsquare text-white absolute text-6xl top-[5%] right-[21%] translate-x-1/2"
-              >
-                20000
-              </h3>
-            </div>
-          </div>
-          <h3
-            class="text-right font-medium underline text-[#ff5700] text-2xl font-forcedsquare"
-          >
-            LỊCH SỬ NHẬN ĐIỂM
-          </h3>
-        </div>
-        <div class="w-full pt-[30.2%] relative">
-          <div class="absolute inset-0">
-            <img class="w-full h-full" src="./assets/images/bg_t4.png" alt="" />
-          </div>
-          <div
-            class="w-[86%] grid grid-cols-4 gap-[1%] absolute right-1/2 translate-x-1/2 top-1/2 -translate-y-1/2 cursor-pointer"
-          >
-            <div>
-              <img class="w-full" src="./assets/images/box1_t5.png" alt="" />
-            </div>
-            <div>
-              <img class="w-full" src="./assets/images/box2_t5.png" alt="" />
-            </div>
-            <div>
-              <img class="w-full" src="./assets/images/box3_t5.png" alt="" />
-            </div>
-            <div>
-              <img class="w-full" src="./assets/images/box4_t5.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="max-w-[1080px] w-full mx-auto pt-[4%] pb-[3%]">
-        <div class="text-center text-base text-[#fff1e7]">
-          <h3 class="text-[#be9e6a] font-bold">Quy tắc sự kiện:</h3>
-          <h3>
-            *Thời gian sự kiện: Từ 09:00 - 00/00/2025 đến 23:59 - 00/00/2025
-          </h3>
-          <h3 class="mb-3">
-            Sự kiện này kết thúc lúc 00:00 sáng ngày 00/00/2025 và sẽ không thể
-            truy cập vào trang sự kiện sau thời gian này.
-          </h3>
-          <h3 class="text-[#be9e6a] font-bold">Cách tham gia:</h3>
-          <h3 class="mb-5">
-            Bạn có thể tham gia sự kiện thông qua biểu ngữ sự kiện hoặc biểu ngữ
-            tab n tức nằm ở góc trên bên phải của sảnh trò chơi.
-          </h3>
-        </div>
-        <div class="text-[#fff1e7] space-y-4 text-base">
-          <h3 class="text-[#be9e6a] font-bold">
-            *Thông tin về phần thưởng sự kiện:
-          </h3>
-          <h3>1. Tất cả người chơi đều có thể tham gia.</h3>
-          <h3>
-            2. Trang web sự kiện sẽ lưu tiến trình đăng nhập và điểm tích lũy
-            của mỗi tài khoản.
-          </h3>
-          <h3>3. Mỗi vật phẩm chỉ có thể nhận được một lần.</h3>
-          <h3>
-            4. Mục nhiệm vụ có 2 phần (Điểm tối đa nhận được mỗi ngày cho cả hai
-            phần là 130 điểm):
-          </h3>
-          <ul class="pl-6 space-y-3">
-            <li>
-              <h3>
-                4.1. Tích lũy thời gian chơi mỗi ngày để nhận điểm: (Mỗi ngày có
-                thể nhận tối đa 80 điểm).
-              </h3>
-              <h3>
-                (Điểm đặt lại có thể nhận được mỗi ngày vào lúc 00h00, nếu không
-                nhấn để nhận điểm, sẽ mất điểm của ngày đó).
-              </h3>
-            </li>
-            <li>
-              <h3>
-                4.2. Tích lũy Xếp hạng các trận đấu: (Mỗi ngày có thể nhận được
-                tối đa 50 điểm).
-              </h3>
-              <h3>
-                (Điểm đặt lại có thể nhận được mỗi ngày vào lúc 00h00, nếu không
-                nhấn để nhận điểm, sẽ mất điểm của ngày đó).
-              </h3>
-            </li>
-          </ul>
-          <h3>5. Điểm đổi shop:</h3>
-          <ul class="pl-6 space-y-3">
-            <li>
-              <h3>
-                5.1. Số điểm tích lũy phụ thuộc vào số điểm mà mỗi tài khoản
-                nhận được.
-              </h3>
-            </li>
-            <li>
-              <h3>5.2. Số điểm dùng để đổi vật phẩm sẽ bị trừ khi sử dụng.</h3>
-            </li>
-            <li>
-              <h3>
-                5.3. Mỗi vật phẩm trong shop chỉ có thể đổi một lần cho mỗi tài
-                khoản.
-              </h3>
-            </li>
-          </ul>
+        <div class="absolute w-[21.61%] bottom-[23%] right-[7.3%]">
+          <img class="w-full letter title-binh" src="./assets/images/title_binh.png" alt="" />
         </div>
       </div>
     </div>
-    <script src="./assets/js/aos.js"></script>
-    <script src="./assets/js/toastify-js.js"></script>
-    <script src="./assets/js/jquery-3.6.3.min.js"></script>
-    <script src="./assets/js/main.js"></script>
-  </body>
+    <div class="max-w-[1640px] mx-auto w-full relative z-[2] ">
+      <div class="w-[94%] mx-auto">
+        <div class="flex items-center space-x-4 mb-[0.5%]">
+          <div>
+            <img src="./assets/images/sk_1.png" alt="" />
+          </div>
+          <div>
+            <img src="./assets/images/sk1_heading.png" alt="" />
+          </div>
+        </div>
+        <div class="flex justify-center space-x-[5%] items-end text-base mb-[1%]">
+          <h3 class="flex-1 text-[#fff1e7]">
+            Bạn có thể nhận phần thưởng tương ứng bằng cách đăng nhập và điểm
+            danh mỗi ngày trong thời gian diễn ra sự kiện.<br />
+            Sự kiện này là sự kiện đăng nhập điểm danh tích lũy và bạn có thể
+            tham gia điểm danh tổng cộng 26 ngày.<br />
+            Ngay cả khi quá trình đăng nhập điểm danh bị gián đoạn, bạn vẫn có
+            thể tiếp tục nhận được phần thưởng từ số ngày điểm danh cuối cùng
+            trong lần truy cập tiếp theo của bạn.
+          </h3>
+          <h3 class="font-medium underline text-[#ff5700] text-2xl font-forcedsquare">
+            LỊCH SỬ NHẬN
+          </h3>
+        </div>
+      </div>
+      <div class="w-full pt-[44%] relative">
+        <div class="absolute inset-0">
+          <img class="w-full h-full" src="./assets/images/frame_t2.png" alt="" />
+        </div>
+        <div class="absolute w-[11%] h-full top-0 left-[40%] ray-light-container">
+          <div class="ray-light-effect">
+            <img class="w-full h-full" src="./assets/images/ray_light.png" alt="" />
+          </div>
+          <div class="ray_light_top">
+            <img class="w-full" src="./assets/images/ray_light_top.png" alt="" />
+          </div>
+          <div class="ray_light_bottom">
+            <img class="w-full" src="./assets/images/ray_light_bottom.png" alt="" />
+          </div>
+        </div>
+        <div class="absolute w-[11%] h-full top-0 right-[4%] ray-light-container">
+          <div class="ray-light-effect">
+            <img class="w-full h-full" src="./assets/images/ray_light.png" alt="" />
+          </div>
+          <div class="ray_light_top">
+            <img class="w-full" src="./assets/images/ray_light_top.png" alt="" />
+          </div>
+          <div class="ray_light_bottom">
+            <img class="w-full" src="./assets/images/ray_light_bottom.png" alt="" />
+          </div>
+        </div>
+        <div class="absolute w-[6.5%] bottom-[6.5%] right-[6%]">
+          <img class="w-full" src="./assets/images/character_1.png" alt="" />
+        </div>
+        <div id="container"
+          class="grid grid-cols-10 gap-x-[1%] gap-y-[2%] w-[89%] absolute top-[9%] right-1/2 translate-x-1/2 cursor-pointer">
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day1_t2.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day2_t2.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day3_t2.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day4_t2.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div class="absolute inset-0 overflow-hidden">
+              <div class="flare-item-effect"></div>
+            </div>
+            <div>
+              <img class="w-full" src="./assets/images/gold_box_5.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day6_t2.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day7_t2.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day8_t2.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day9_t2.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div class="absolute inset-0 overflow-hidden">
+              <div class="flare-item-effect"></div>
+            </div>
+            <div>
+              <img class="w-full" src="./assets/images/gold_box_10.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day11_t2.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day12_t2.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day13_t2.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day14_t2.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div class="absolute inset-0 overflow-hidden">
+              <div class="flare-item-effect"></div>
+            </div>
+            <div>
+              <img class="w-full" src="./assets/images/gold_box_15.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day16_t2.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day17_t2.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day18_t2.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day19_t2.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div class="absolute inset-0 overflow-hidden">
+              <div class="flare-item-effect"></div>
+            </div>
+            <div>
+              <img class="w-full" src="./assets/images/gold_box_20.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day21_t2.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day22_t2.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day23_t2.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day24_t2.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div class="absolute inset-0 overflow-hidden">
+              <div class="flare-item-effect"></div>
+            </div>
+            <div>
+              <img class="w-full" src="./assets/images/gold_box_25.png" alt="" />
+            </div>
+          </div>
+          <div class="box">
+            <div class="flare"></div>
+            <div>
+              <img class="w-full" src="./assets/images/day26_t2.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="absolute top-0 right-0 h-full">
+          <img class="w-full h-full" src="./assets/images/frame_t22.png" alt="" />
+        </div>
+        <button class="w-[22%] absolute bottom-[6%] right-[15%]">
+          <img class="w-full" src="./assets/images/btn_register.png" alt="" />
+        </button>
+      </div>
+    </div>
+    <div class="max-w-[1640px] mx-auto w-full relative z-[1] pt-[3%]">
+      <div class="absolute bottom-0 left-0 w-full">
+        <img class="w-full" src="./assets/images/bg_blue.png" alt="" />
+      </div>
+      <div class="absolute -left-[0.5%] bottom-0 h-[110%] w-[3%]">
+        <img class="w-full h-full" src="./assets/images/ground_1.png" alt="" />
+      </div>
+      <div class="absolute -right-[0.5%] bottom-0 h-[110%] w-[3%]">
+        <img class="w-full h-full" src="./assets/images/ground_2.png" alt="" />
+      </div>
+      <div class="w-[91%] mx-auto mb-[1%]">
+        <div class="flex items-center space-x-4 mb-[1%] -translate-x-[1%]">
+          <div>
+            <img src="./assets/images/sk_2.png" alt="" />
+          </div>
+          <div>
+            <img src="./assets/images/sk2_heading.png" alt="" />
+          </div>
+        </div>
+        <div class="flex justify-center space-x-[5%] items-end">
+          <h3 class="flex-1 text-[#fff1e7]">
+            Bạn có thể kiếm điểm thưởng thông qua các nhiệm vụ hàng ngày trong
+            thời gian diễn ra sự kiện.<br />
+            Số điểm tối đa nhận được mỗi ngày khi tham gia nhiệm vụ Chơi tích
+            lũy: 80 Điểm. Nhiệm vụ sẽ khởi tạo 00h00 hàng ngày.
+          </h3>
+          <h3 class="font-medium underline text-[#ff5700] text-2xl font-forcedsquare">
+            LỊCH SỬ NHẬN
+          </h3>
+        </div>
+      </div>
+      <div class="w-[91%] mx-auto grid grid-cols-6 gap-[2%] relative cursor-pointer pb-[1%]">
+        <div class="relative">
+          <img class="w-full" src="./assets/images/box_card_timer.png" alt="" />
+          <h3 class="text-[1.6vw] absolute top-[4%] right-[21%] font-bold text-[#ff5700] font-forcedsquare">
+            10
+          </h3>
+        </div>
+        <div class="relative">
+          <img class="w-full" src="./assets/images/box_card_timer.png" alt="" />
+          <h3 class="text-[1.6vw] absolute top-[4%] right-[21%] font-bold text-[#ff5700] font-forcedsquare">
+            20
+          </h3>
+        </div>
+        <div class="relative">
+          <img class="w-full" src="./assets/images/box_card_timer.png" alt="" />
+          <h3 class="text-[1.6vw] absolute top-[4%] right-[21%] font-bold text-[#ff5700] font-forcedsquare">
+            30
+          </h3>
+        </div>
+        <div class="relative">
+          <img class="w-full" src="./assets/images/box_card_timer.png" alt="" />
+          <h3 class="text-[1.6vw] absolute top-[4%] right-[21%] font-bold text-[#ff5700] font-forcedsquare">
+            40
+          </h3>
+        </div>
+        <div class="relative">
+          <img class="w-full" src="./assets/images/box_card_timer2.png" alt="" />
+          <h3 class="text-[1.6vw] absolute top-[4%] right-[21%] font-bold text-[#ff5700] font-forcedsquare">
+            50
+          </h3>
+        </div>
+        <div class="relative">
+          <img class="w-full" src="./assets/images/box_card_timer2.png" alt="" />
+          <h3 class="text-[1.6vw] absolute top-[4%] right-[21%] font-bold text-[#ff5700] font-forcedsquare">
+            60
+          </h3>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-[1080px] mx-auto w-full relative mb-[2%]">
+      <div class="absolute bottom-0 left-0 w-full">
+        <img class="w-full" src="./assets/images/bg_blue.png" alt="" />
+      </div>
+      <div class="absolute -left-[0.5%] bottom-0 h-[110%] w-[5%]">
+        <img class="w-full h-full" src="./assets/images/ground_1.png" alt="" />
+      </div>
+      <div class="absolute -right-[0.5%] bottom-0 h-[110%] w-[5%]">
+        <img class="w-full h-full" src="./assets/images/ground_2.png" alt="" />
+      </div>
+      <div class="absolute w-[23%] -bottom-[23%] -left-[4%] -translate-x-full">
+        <img class="w-full" src="./assets/images/character_2.png" alt="" />
+      </div>
+      <div class="absolute w-[23%] -bottom-[23%] -right-[4%] translate-x-full">
+        <img class="w-full" src="./assets/images/character_3.png" alt="" />
+      </div>
+      <div class="w-[75%] mx-auto flex flex-col items-center pt-[2%]">
+        <div class="w-[80%]">
+          <img class="w-full" src="./assets/images/heading_t4.png" alt="" />
+        </div>
+        <h3 class="mt-[1%] mb-[3%] text-[#fff1e7]">
+          Số điểm tối đa nhận được mỗi ngày khi tham gia nhiệm vụ Rank: 50
+          điểm. Nhiệm vụ sẽ khởi tạo 00h00 hàng ngày.
+        </h3>
+        <div class="w-[80%] grid grid-cols-3 gap-[2%] relative cursor-pointer pb-[1%]">
+          <div class="relative">
+            <img class="w-full" src="./assets/images/box_card_rank.png" alt="" />
+            <h3 class="text-[1.6vw] absolute top-[3.5%] right-[40%] font-bold text-[#ff5700] font-forcedsquare">
+              01
+            </h3>
+          </div>
+          <div class="relative">
+            <img class="w-full" src="./assets/images/box_card_rank2.png" alt="" />
+            <h3 class="text-[1.6vw] absolute top-[3.5%] right-[40%] font-bold text-[#ff5700] font-forcedsquare">
+              05
+            </h3>
+          </div>
+          <div class="relative">
+            <img class="w-full" src="./assets/images/box_card_rank2.png" alt="" />
+            <h3 class="text-[1.6vw] absolute top-[3.5%] right-[40%] font-bold text-[#ff5700] font-forcedsquare">
+              10
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-[1620px] mx-auto w-full">
+      <div class="w-[94%] mx-auto mb-[1%]">
+        <div class="flex justify-between mb-3 space-x-5">
+          <div class="flex-1">
+            <div class="flex items-center mb-3 space-x-4">
+              <div>
+                <img src="./assets/images/sk_3.png" alt="" />
+              </div>
+              <div>
+                <img src="./assets/images/sk3_heading.png" alt="" />
+              </div>
+            </div>
+            <h3 class="text-[#fff1e7]">
+              Sử dụng điểm thưởng kiếm được thông qua đăng nhập hàng ngày và
+              nhiệm vụ hàng ngày để đổi lấy những vật phẩm đa dạng.
+            </h3>
+          </div>
+          <div class="relative">
+            <img src="./assets/images/my_ccp.png" alt="" />
+            <h3 class="font-forcedsquare text-white absolute text-6xl top-[5%] right-[21%] translate-x-1/2">
+              20000
+            </h3>
+          </div>
+        </div>
+        <h3 class="text-right font-medium underline text-[#ff5700] text-2xl font-forcedsquare">
+          LỊCH SỬ NHẬN ĐIỂM
+        </h3>
+      </div>
+      <div class="w-full pt-[30.2%] relative">
+        <div class="absolute inset-0">
+          <img class="w-full h-full" src="./assets/images/bg_t4.png" alt="" />
+        </div>
+        <div
+          class="w-[86%] grid grid-cols-4 gap-[1%] absolute right-1/2 translate-x-1/2 top-1/2 -translate-y-1/2 cursor-pointer">
+          <div>
+            <img class="w-full" src="./assets/images/box1_t5.png" alt="" />
+          </div>
+          <div>
+            <img class="w-full" src="./assets/images/box2_t5.png" alt="" />
+          </div>
+          <div>
+            <img class="w-full" src="./assets/images/box3_t5.png" alt="" />
+          </div>
+          <div>
+            <img class="w-full" src="./assets/images/box4_t5.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-[1080px] w-full mx-auto pt-[4%] pb-[3%]">
+      <div class="text-center text-base text-[#fff1e7]">
+        <h3 class="text-[#be9e6a] font-bold">Quy tắc sự kiện:</h3>
+        <h3>
+          *Thời gian sự kiện: Từ 09:00 - 00/00/2025 đến 23:59 - 00/00/2025
+        </h3>
+        <h3 class="mb-3">
+          Sự kiện này kết thúc lúc 00:00 sáng ngày 00/00/2025 và sẽ không thể
+          truy cập vào trang sự kiện sau thời gian này.
+        </h3>
+        <h3 class="text-[#be9e6a] font-bold">Cách tham gia:</h3>
+        <h3 class="mb-5">
+          Bạn có thể tham gia sự kiện thông qua biểu ngữ sự kiện hoặc biểu ngữ
+          tab n tức nằm ở góc trên bên phải của sảnh trò chơi.
+        </h3>
+      </div>
+      <div class="text-[#fff1e7] space-y-4 text-base">
+        <h3 class="text-[#be9e6a] font-bold">
+          *Thông tin về phần thưởng sự kiện:
+        </h3>
+        <h3>1. Tất cả người chơi đều có thể tham gia.</h3>
+        <h3>
+          2. Trang web sự kiện sẽ lưu tiến trình đăng nhập và điểm tích lũy
+          của mỗi tài khoản.
+        </h3>
+        <h3>3. Mỗi vật phẩm chỉ có thể nhận được một lần.</h3>
+        <h3>
+          4. Mục nhiệm vụ có 2 phần (Điểm tối đa nhận được mỗi ngày cho cả hai
+          phần là 130 điểm):
+        </h3>
+        <ul class="pl-6 space-y-3">
+          <li>
+            <h3>
+              4.1. Tích lũy thời gian chơi mỗi ngày để nhận điểm: (Mỗi ngày có
+              thể nhận tối đa 80 điểm).
+            </h3>
+            <h3>
+              (Điểm đặt lại có thể nhận được mỗi ngày vào lúc 00h00, nếu không
+              nhấn để nhận điểm, sẽ mất điểm của ngày đó).
+            </h3>
+          </li>
+          <li>
+            <h3>
+              4.2. Tích lũy Xếp hạng các trận đấu: (Mỗi ngày có thể nhận được
+              tối đa 50 điểm).
+            </h3>
+            <h3>
+              (Điểm đặt lại có thể nhận được mỗi ngày vào lúc 00h00, nếu không
+              nhấn để nhận điểm, sẽ mất điểm của ngày đó).
+            </h3>
+          </li>
+        </ul>
+        <h3>5. Điểm đổi shop:</h3>
+        <ul class="pl-6 space-y-3">
+          <li>
+            <h3>
+              5.1. Số điểm tích lũy phụ thuộc vào số điểm mà mỗi tài khoản
+              nhận được.
+            </h3>
+          </li>
+          <li>
+            <h3>5.2. Số điểm dùng để đổi vật phẩm sẽ bị trừ khi sử dụng.</h3>
+          </li>
+          <li>
+            <h3>
+              5.3. Mỗi vật phẩm trong shop chỉ có thể đổi một lần cho mỗi tài
+              khoản.
+            </h3>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="./assets/js/aos.js"></script>
+  <script src="./assets/js/toastify-js.js"></script>
+  <script src="./assets/js/jquery-3.6.3.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+
 </html>

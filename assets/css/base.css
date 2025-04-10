@@ -344,6 +344,10 @@ body {
 .letter {
   opacity: 0;
   transform: translateY(-200px) rotate(-10deg) scale(1.2);
+}
+
+.letter-active {
+  opacity: 1;
   animation: dropSmash 0.9s forwards cubic-bezier(0.8, 0, 0.2, 1.4);
 }
 

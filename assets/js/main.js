@@ -1,4 +1,6 @@
 const targetDiv = document.querySelector("#event-second-node");
+const headerSession = document.querySelector("#header-session");
+
 const scrollableFirst = document.getElementById("container");
 const boxes = document.querySelectorAll(".box");
 const flareEffectNode = document.querySelectorAll(".flare-item-effect");
@@ -7,9 +9,9 @@ const rayLightContainer = document.querySelectorAll(".ray-light-container");
 const timeoutEffect = [];
 
 const options = {
-  root: null, // sử dụng cửa sổ trình duyệt làm vùng gốc
-  rootMargin: "0px", // không có margin
-  threshold: 0, // khi ít nhất 50% thẻ div xuất hiện trong cửa sổ
+  root: null,
+  rootMargin: "0px",
+  threshold: 0,
 };
 
 const observer = new IntersectionObserver((entries, observer) => {
@@ -25,6 +27,18 @@ const observer = new IntersectionObserver((entries, observer) => {
 }, options);
 
 observer.observe(scrollableFirst);
+
+const observer1 = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    const lettters = document.querySelectorAll(".letter");
+    lettters.forEach((letter) => {
+      letter.classList.toggle("letter-active");
+    });
+    document.querySelector(".title_bg").classList.toggle("title_bg-active");
+  });
+}, options);
+
+observer1.observe(headerSession);
 
 function addEffect() {
   rayLightEffect(true);
