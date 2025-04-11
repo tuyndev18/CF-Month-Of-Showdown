@@ -82,6 +82,14 @@ body {
   animation: flashGlow 0.3s ease-out, shake 0.3s ease-in-out;
 }
 
+.received-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/receive_gift.png");
+  background-size: 100% 100%;
+}
+
 .box.active::after {
   content: "";
   position: absolute;
@@ -94,6 +102,7 @@ body {
     rgba(255, 255, 255, 0.2),
     transparent 70%
   );
+  visibility: hidden;
   border-radius: 20px;
   animation: glowPulse 0.8s ease-out forwards;
   z-index: 0;
@@ -164,10 +173,12 @@ body {
   0% {
     opacity: 0.8;
     transform: scale(0.5);
+    visibility: visible;
   }
   100% {
     opacity: 0;
     transform: scale(1.5);
+    visibility: hidden;
   }
 }
 
@@ -310,12 +321,17 @@ body {
   opacity: 1;
 }
 
+.flare-item-effect {
+  visibility: hidden;
+}
+
 .flare-effect-active {
   position: absolute;
   top: -50%;
   left: -100%;
   width: 200%;
   height: 200%;
+  z-index: 20;
   background: linear-gradient(
     120deg,
     rgba(255, 255, 255, 0) 40%,
@@ -327,25 +343,9 @@ body {
   animation: blingSweep 1.5s 1 forwards;
 }
 
-.flare-effect-active2 {
-  position: absolute;
-  top: -50%;
-  left: -100%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0) 40%,
-    rgba(255, 255, 255, 0.8) 50%,
-    rgba(255, 255, 255, 0) 60%
-  );
-  transform: rotate(25deg);
-  pointer-events: none;
-  animation: blingSweep 1.25s 3 0.5s forwards alternate;
-}
-
 @keyframes blingSweep {
   0% {
+    visibility: visible;
     transform: translateX(-100%) rotate(25deg);
     opacity: 0;
   }
@@ -355,6 +355,7 @@ body {
   100% {
     transform: translateX(100%) rotate(25deg);
     opacity: 0;
+    visibility: hidden;
   }
 }
 
@@ -551,7 +552,7 @@ body {
 
 .header-top-active {
   transition: all 0.3s ease-out;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
@@ -599,7 +600,7 @@ body {
 }
 
 .mode-rank-character {
-  opacity: 1;
+  opacity: 0;
   transform: translateY(75%);
 }
 
@@ -638,4 +639,61 @@ body {
     transform: translateY(0%);
     filter: blur(0px) contrast(100%);
   }
+}
+
+.flip-card {
+  background-color: transparent;
+  position: absolute;
+  inset: 0;
+}
+
+.flip-card-inner {
+  position: absolute;
+  top: 0;
+  perspective: 1000px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.75s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-active {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 15px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #fea758;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #ff5000;
+  border-radius: 10px;
+  border: 2px solid #fea758;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

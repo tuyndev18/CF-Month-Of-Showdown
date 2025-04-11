@@ -5,21 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CF</title>
-    <link rel="stylesheet" href="./assets/css/aos.css" />
     <link rel="stylesheet" href="./assets/css/base.css" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
-    <link rel="stylesheet" href="./assets/css/animate.min.css" />
-    <link rel="stylesheet" href="./assets/css/toastify.min.css" />
   </head>
 
   <body>
-    <div class="flex items-center justify-center w-full h-screen lg:hidden">
-      <h3 class="text-2xl text-center">
-        Vui lòng truy cập bằng máy tính để xem đầy đủ nội dung chi tiết hơn.
+    <mobile
+      class="flex items-center justify-center w-full min-h-screen lg:hidden"
+    >
+      <h3 class="text-2xl text-center px-8">
+        Vui lòng truy cập bằng máy tính để xem nội dung sự kiện này.
       </h3>
-    </div>
-    
-    <div class="hidden overflow-x-hidden background-main lg:block">
+    </mobile>
+    <pc class="hidden overflow-x-hidden background-main lg:block w-full">
       <header class="relative min-h-screen">
         <div
           class="fixed top-0 z-50 flex items-center justify-between w-full px-6 py-4 header-top"
@@ -34,7 +32,8 @@
             <h3>Hỗ trợ</h3>
             <h3>Đăng ký</h3>
           </div>
-          <div class="flex items-center space-x-4">
+          <!-- logout -->
+          <!-- <div class="flex items-center space-x-4">
             <h3 class="text-sm font-bold text-white xl:text-base">
               SỐ DƯ GO: <span class="text-[#f55401]"> 10.000</span> - TÀI KHOẢN:
               <span class="text-[#f55401]"> phunga158800</span>
@@ -42,6 +41,10 @@
             <div class="w-[130px] xl:w-[200px] cursor-pointer">
               <img class="w-full" src="./assets/images/btn_logout.png" alt="" />
             </div>
+          </div> -->
+          <!-- login -->
+          <div class="w-[130px] xl:w-[200px] cursor-pointer">
+            <img class="w-full" src="./assets/images/btn_login.png" alt="" />
           </div>
         </div>
         <div class="absolute w-full">
@@ -108,7 +111,7 @@
         </div>
       </header>
       <main class="px-5">
-        <div class="max-w-[1550px] mx-auto w-full relative z-[2]">
+        <div class="max-w-[1530px] mx-auto w-full relative z-[2]">
           <div class="w-[94%] mx-auto">
             <div class="flex items-center space-x-4 mb-[0.5%] mt-[3%]">
               <div>
@@ -123,7 +126,7 @@
               </div>
             </div>
             <div
-              class="flex justify-center space-x-[5%] items-end text-base mb-[1%]"
+              class="flex justify-center space-x-[5%] items-end text-base mb-[1.5%]"
             >
               <h3 class="flex-1 text-[#fff1e7]">
                 Bạn có thể nhận phần thưởng tương ứng bằng cách đăng nhập và
@@ -208,11 +211,11 @@
             </div>
             <div
               id="container"
-              class="grid grid-cols-10 gap-x-[1%] gap-y-[2%] w-[89%] absolute top-[9%] right-1/2 translate-x-1/2 cursor-pointer"
+              class="grid grid-cols-10 gap-x-[1%] gap-y-[2%] w-[89%] absolute top-[9%] right-1/2 translate-x-1/2"
             >
               <div class="box">
                 <div class="flare"></div>
-                <div>
+                <div class="received-box relative">
                   <img
                     class="w-full"
                     src="./assets/images/day1_t2.png"
@@ -222,7 +225,7 @@
               </div>
               <div class="box">
                 <div class="flare"></div>
-                <div>
+                <div class="received-box relative">
                   <img
                     class="w-full"
                     src="./assets/images/day2_t2.png"
@@ -232,7 +235,7 @@
               </div>
               <div class="box">
                 <div class="flare"></div>
-                <div>
+                <div class="received-box relative">
                   <img
                     class="w-full"
                     src="./assets/images/day3_t2.png"
@@ -250,17 +253,22 @@
                   />
                 </div>
               </div>
-              <div class="box">
+              <div class="box relative">
                 <div class="flare"></div>
                 <div class="absolute inset-0 overflow-hidden">
                   <div class="flare-item-effect"></div>
                 </div>
-                <div>
-                  <img
-                    class="w-full"
-                    src="./assets/images/gold_box_5.png"
-                    alt=""
-                  />
+                <div class="w-full pt-[130%] relative z-10">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="./assets/images/day5_t2.png" />
+                      </div>
+                      <div class="flip-card-back">
+                        <img src="./assets/images/day5_t2_flip.png" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="box">
@@ -303,17 +311,22 @@
                   />
                 </div>
               </div>
-              <div class="box">
+              <div class="box relative">
                 <div class="flare"></div>
                 <div class="absolute inset-0 overflow-hidden">
                   <div class="flare-item-effect"></div>
                 </div>
-                <div>
-                  <img
-                    class="w-full"
-                    src="./assets/images/gold_box_10.png"
-                    alt=""
-                  />
+                <div class="w-full pt-[130%] relative z-10">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="./assets/images/day10_t2.png" />
+                      </div>
+                      <div class="flip-card-back">
+                        <img src="./assets/images/day10_t2_flip.png" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="box">
@@ -356,17 +369,22 @@
                   />
                 </div>
               </div>
-              <div class="box">
+              <div class="box relative">
                 <div class="flare"></div>
                 <div class="absolute inset-0 overflow-hidden">
                   <div class="flare-item-effect"></div>
                 </div>
-                <div>
-                  <img
-                    class="w-full"
-                    src="./assets/images/gold_box_15.png"
-                    alt=""
-                  />
+                <div class="w-full pt-[130%] relative z-10">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="./assets/images/day15_t2.png" />
+                      </div>
+                      <div class="flip-card-back">
+                        <img src="./assets/images/day15_t2_flip.png" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="box">
@@ -409,17 +427,22 @@
                   />
                 </div>
               </div>
-              <div class="box">
+              <div class="box relative">
                 <div class="flare"></div>
                 <div class="absolute inset-0 overflow-hidden">
                   <div class="flare-item-effect"></div>
                 </div>
-                <div>
-                  <img
-                    class="w-full"
-                    src="./assets/images/gold_box_20.png"
-                    alt=""
-                  />
+                <div class="w-full pt-[130%] relative z-10">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="./assets/images/day20_t2.png" />
+                      </div>
+                      <div class="flip-card-back">
+                        <img src="./assets/images/day20_t2_flip.png" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="box">
@@ -462,17 +485,22 @@
                   />
                 </div>
               </div>
-              <div class="box">
+              <div class="box relative">
                 <div class="flare"></div>
                 <div class="absolute inset-0 overflow-hidden">
                   <div class="flare-item-effect"></div>
                 </div>
-                <div>
-                  <img
-                    class="w-full"
-                    src="./assets/images/gold_box_25.png"
-                    alt=""
-                  />
+                <div class="w-full pt-[130%] relative z-10">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="./assets/images/day25_t2.png" />
+                      </div>
+                      <div class="flip-card-back">
+                        <img src="./assets/images/day25_t2_flip.png" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="box">
@@ -502,7 +530,7 @@
             </button>
           </div>
         </div>
-        <div class="max-w-[1550px] mx-auto w-full relative z-[1] pt-[3%]">
+        <div class="max-w-[1530px] mx-auto w-full relative z-[1] pt-[3%]">
           <div class="absolute bottom-0 left-0 w-full">
             <img class="w-full" src="./assets/images/bg_blue.png" alt="" />
           </div>
@@ -520,7 +548,7 @@
               alt=""
             />
           </div>
-          <div class="w-[91%] mx-auto mb-[1%]">
+          <div class="w-[91%] mx-auto mb-[1.5%]">
             <div class="flex items-center space-x-4 mb-[1%] -translate-x-[1%]">
               <div>
                 <img src="./assets/images/sk_2.png" alt="" />
@@ -557,7 +585,7 @@
                 alt=""
               />
               <h3
-                class="text-[1.6vw] absolute top-[4%] right-[21%] font-bold text-[#ff5700] font-forcedsquare"
+                class="text-[1.6vw] absolute top-[2%] right-[21%] font-bold text-[#ff5700] font-forcedsquare"
               >
                 10
               </h3>
@@ -569,7 +597,7 @@
                 alt=""
               />
               <h3
-                class="text-[1.6vw] absolute top-[4%] right-[21%] font-bold text-[#ff5700] font-forcedsquare"
+                class="text-[1.6vw] absolute top-[2%] right-[21%] font-bold text-[#ff5700] font-forcedsquare"
               >
                 20
               </h3>
@@ -581,7 +609,7 @@
                 alt=""
               />
               <h3
-                class="text-[1.6vw] absolute top-[4%] right-[21%] font-bold text-[#ff5700] font-forcedsquare"
+                class="text-[1.6vw] absolute top-[2%] right-[21%] font-bold text-[#ff5700] font-forcedsquare"
               >
                 30
               </h3>
@@ -593,7 +621,7 @@
                 alt=""
               />
               <h3
-                class="text-[1.6vw] absolute top-[4%] right-[21%] font-bold text-[#ff5700] font-forcedsquare"
+                class="text-[1.6vw] absolute top-[2%] right-[21%] font-bold text-[#ff5700] font-forcedsquare"
               >
                 40
               </h3>
@@ -605,7 +633,7 @@
                 alt=""
               />
               <h3
-                class="text-[1.6vw] absolute top-[4%] right-[21%] font-bold text-[#ff5700] font-forcedsquare"
+                class="text-[1.6vw] absolute top-[2%] right-[21%] font-bold text-[#ff5700] font-forcedsquare"
               >
                 50
               </h3>
@@ -617,14 +645,16 @@
                 alt=""
               />
               <h3
-                class="text-[1.6vw] absolute top-[4%] right-[21%] font-bold text-[#ff5700] font-forcedsquare"
+                class="text-[1.6vw] absolute top-[2%] right-[21%] font-bold text-[#ff5700] font-forcedsquare"
               >
                 60
               </h3>
             </div>
           </div>
         </div>
-        <div class="max-w-[1000px] mx-auto w-full relative mb-[2%] mode-rank-node">
+        <div
+          class="max-w-[1024px] mx-auto w-full relative mb-[3%] mode-rank-node"
+        >
           <div class="relative w-full mode-rank-effect">
             <div class="absolute bottom-0 left-0 w-full">
               <img class="w-full" src="./assets/images/bg_blue.png" alt="" />
@@ -643,7 +673,7 @@
                 alt=""
               />
             </div>
-            <div class="w-[80%] mx-auto flex flex-col items-center pt-[2%]">
+            <div class="w-[85%] mx-auto flex flex-col items-center pt-[2%]">
               <div class="w-[70%]">
                 <img
                   class="w-full warn_light_effect1"
@@ -665,7 +695,7 @@
                     alt=""
                   />
                   <h3
-                    class="text-[1.6vw] absolute top-[3.5%] right-[40%] font-bold text-[#ff5700] font-forcedsquare"
+                    class="text-[1.6vw] absolute top-[2.5%] right-[40%] font-bold text-[#ff5700] font-forcedsquare"
                   >
                     01
                   </h3>
@@ -677,7 +707,7 @@
                     alt=""
                   />
                   <h3
-                    class="text-[1.6vw] absolute top-[3.5%] right-[40%] font-bold text-[#ff5700] font-forcedsquare"
+                    class="text-[1.6vw] absolute top-[2.5%] right-[40%] font-bold text-[#ff5700] font-forcedsquare"
                   >
                     05
                   </h3>
@@ -689,7 +719,7 @@
                     alt=""
                   />
                   <h3
-                    class="text-[1.6vw] absolute top-[3.5%] right-[40%] font-bold text-[#ff5700] font-forcedsquare"
+                    class="text-[1.6vw] absolute top-[2.5%] right-[40%] font-bold text-[#ff5700] font-forcedsquare"
                   >
                     10
                   </h3>
@@ -700,16 +730,24 @@
           <div
             class="absolute w-[23%] -bottom-[23%] -left-[4%] -translate-x-full"
           >
-            <img class="w-full mode-rank-character" src="./assets/images/character_2.png" alt="" />
+            <img
+              class="w-full mode-rank-character"
+              src="./assets/images/character_2.png"
+              alt=""
+            />
           </div>
           <div
             class="absolute w-[23%] -bottom-[23%] -right-[4%] translate-x-full"
           >
-            <img class="w-full mode-rank-character" src="./assets/images/character_3.png" alt="" />
+            <img
+              class="w-full mode-rank-character"
+              src="./assets/images/character_3.png"
+              alt=""
+            />
           </div>
         </div>
-        <div class="max-w-[1530px] mx-auto w-full effect-node5">
-          <div class="w-[94%] mx-auto mb-[1%]">
+        <div class="max-w-[1500px] mx-auto w-full effect-node5">
+          <div class="w-[94%] mx-auto mb-[1.5%]">
             <div class="flex justify-between mb-3 space-x-5">
               <div class="flex-1">
                 <div class="flex items-center mb-3 space-x-4">
@@ -818,7 +856,7 @@
             </div>
           </div>
         </div>
-        <div class="max-w-[1000px] w-full mx-auto pb-[8%]">
+        <div class="max-w-[980px] w-full mx-auto pb-[8%]">
           <div class="mt-[12%] mb-[6%]">
             <img class="w-full" src="./assets/images/line_divider.png" alt="" />
           </div>
@@ -899,10 +937,291 @@
       <footer>
         <img class="w-full" src="./assets/images/bg_footer.png" alt="" />
       </footer>
-    </div>
-    <script src="./assets/js/aos.js"></script>
-    <script src="./assets/js/toastify-js.js"></script>
-    <script src="./assets/js/jquery-3.6.3.min.js"></script>
+    </pc>
+    <!-- popup hiển thị lịch sử nhận quà -->
+    <!-- <history-popup class="h-screen fixed inset-0 z-50">
+      <div class="absolute inset-0 bg-[rgb(0,0,0,0.35)]"></div>
+      <div
+        class="max-w-[1400px] w-full absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 px-3"
+      >
+        <div class="w-full pt-[32%] relative">
+          <div class="absolute inset-0">
+            <img
+              class="w-full h-full"
+              src="./assets/images/bg_popup.png"
+              alt=""
+            />
+          </div>
+          <div class="w-[50%] absolute top-[3%] right-1/2 translate-x-1/2">
+            <img class="w-full" src="./assets/images/header_popup.png" alt="" />
+            <h3
+              class="font-forcedsquare text-[2vw] w-full absolute right-0 text-center top-[15%]"
+            >
+              LỊCH SỬ NHẬN
+            </h3>
+          </div>
+          <div
+            class="w-[86%] h-[62%] top-[22%] absolute right-1/2 translate-x-1/2 overflow-y-auto flex custom-scrollbar"
+          >
+            <table class="font-forcedsquare w-full">
+              <thead>
+                <tr class="text-[#ffbd3f] text-base">
+                  <th>
+                    <h3>STT</h3>
+                  </th>
+                  <th>
+                    <h3>Ngày/giờ</h3>
+                  </th>
+                  <th>
+                    <h3>Vật phẩm</h3>
+                  </th>
+                  <th>
+                    <h3>Tình trạng</h3>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="text-white text-center">
+                <tr>
+                  <td class="p-2">
+                    <h3>1</h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>27.03.2025 - 10:00:00</h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>
+                      COP 357 Derringer-Born Beast 2 Noble Gold (Vĩnh viễn)
+                    </h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>Đã nhận</h3>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="p-2">
+                    <h3>1</h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>27.03.2025 - 10:00:00</h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>
+                      COP 357 Derringer-Born Beast 2 Noble Gold (Vĩnh viễn)
+                    </h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>Đã nhận</h3>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="p-2">
+                    <h3>1</h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>27.03.2025 - 10:00:00</h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>
+                      COP 357 Derringer-Born Beast 2 Noble Gold (Vĩnh viễn)
+                    </h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>Đã nhận</h3>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="p-2">
+                    <h3>1</h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>27.03.2025 - 10:00:00</h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>
+                      COP 357 Derringer-Born Beast 2 Noble Gold (Vĩnh viễn)
+                    </h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>Đã nhận</h3>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="p-2">
+                    <h3>1</h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>27.03.2025 - 10:00:00</h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>
+                      COP 357 Derringer-Born Beast 2 Noble Gold (Vĩnh viễn)
+                    </h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>Đã nhận</h3>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="p-2">
+                    <h3>1</h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>27.03.2025 - 10:00:00</h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>
+                      COP 357 Derringer-Born Beast 2 Noble Gold (Vĩnh viễn)
+                    </h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>Đã nhận</h3>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="p-2">
+                    <h3>1</h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>27.03.2025 - 10:00:00</h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>
+                      COP 357 Derringer-Born Beast 2 Noble Gold (Vĩnh viễn)
+                    </h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>Đã nhận</h3>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="p-2">
+                    <h3>1</h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>27.03.2025 - 10:00:00</h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>
+                      COP 357 Derringer-Born Beast 2 Noble Gold (Vĩnh viễn)
+                    </h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>Đã nhận</h3>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="p-2">
+                    <h3>1</h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>27.03.2025 - 10:00:00</h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>
+                      COP 357 Derringer-Born Beast 2 Noble Gold (Vĩnh viễn)
+                    </h3>
+                  </td>
+                  <td class="p-2">
+                    <h3>Đã nhận</h3>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <button
+            class="absolute w-[18%] right-1/2 translate-x-1/2 -bottom-[2%]"
+          >
+            <img class="w-full" src="./assets/images/btn_close.png" alt="" />
+          </button>
+        </div>
+      </div>
+    </history-popup> -->
+
+    <!-- popup thông báo 1 -->
+    <!-- <notifi-popup1 class="h-screen fixed inset-0 z-50">
+      <div class="absolute inset-0 bg-[rgb(0,0,0,0.35)]"></div>
+      <div
+        class="max-w-[1400px] w-full absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 px-3"
+      >
+        <div class="w-full pt-[32%] relative">
+          <div class="absolute inset-0">
+            <img
+              class="w-full h-full"
+              src="./assets/images/bg_popup.png"
+              alt=""
+            />
+          </div>
+          <div class="w-[50%] absolute top-[3%] right-1/2 translate-x-1/2">
+            <img class="w-full" src="./assets/images/header_popup.png" alt="" />
+            <h3
+              class="font-forcedsquare text-[2vw] w-full absolute right-0 text-center top-[15%]"
+            >
+              THÔNG BÁO
+            </h3>
+          </div>
+          <div
+            class="w-[86%] h-[62%] top-[22%] absolute font-forcedsquare text-[1.35vw] right-1/2 translate-x-1/2 flex items-center"
+          >
+            <h3 class="text-white w-full text-center">
+              Thời gian chơi tích lũy của bạn chưa đủ?
+              <br />
+              Vui lòng hoàn thành để nhận được phần thưởng.
+            </h3>
+          </div>
+          <button
+            class="absolute w-[18%] right-1/2 translate-x-1/2 -bottom-[2%]"
+          >
+            <img class="w-full" src="./assets/images/btn_confirm.png" alt="" />
+          </button>
+        </div>
+      </div>
+    </notifi-popup1> -->
+
+    <!-- popup thông báo 2 -->
+    <!-- <notifi-popup2 class="h-screen fixed inset-0 z-50">
+      <div class="absolute inset-0 bg-[rgb(0,0,0,0.35)]"></div>
+      <div
+        class="max-w-[1400px] w-full absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 px-3"
+      >
+        <div class="w-full pt-[32%] relative">
+          <div class="absolute inset-0">
+            <img
+              class="w-full h-full"
+              src="./assets/images/bg_popup.png"
+              alt=""
+            />
+          </div>
+          <div class="w-[50%] absolute top-[3%] right-1/2 translate-x-1/2">
+            <img class="w-full" src="./assets/images/header_popup.png" alt="" />
+            <h3
+              class="font-forcedsquare text-[2vw] w-full absolute right-0 text-center top-[15%]"
+            >
+              THÔNG BÁO
+            </h3>
+          </div>
+          <div
+            class="w-[86%] h-[62%] top-[22%] absolute font-forcedsquare text-[1.35vw] right-1/2 translate-x-1/2 flex items-center"
+          >
+            <h3 class="text-white w-full text-center">
+              Bạn chắc chắn muốn đổi phần thưởng “Flashbang-White Tiger” chứ!?
+            </h3>
+          </div>
+          <div class="w-[40%] absolute right-1/2 translate-x-1/2 -bottom-[2%] flex justify-between">
+            <button class="w-[42%]">
+              <img
+                class="w-full"
+                src="./assets/images/btn_confirm.png"
+                alt=""
+              />
+            </button>
+            <button class="w-[42%]">
+              <img class="w-full" src="./assets/images/btn_cancel.png" alt="" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </notifi-popup2> -->
+
     <script src="./assets/js/main.js"></script>
   </body>
 </html>

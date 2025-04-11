@@ -8,6 +8,7 @@ const scrollableFirst = document.getElementById("container");
 const boxes = document.querySelectorAll(".box");
 const flareEffectNode = document.querySelectorAll(".flare-item-effect");
 const rayLightContainer = document.querySelectorAll(".ray-light-container");
+const lstFlipCard = document.querySelectorAll(".flip-card-inner");
 const lettters = document.querySelectorAll(".letter");
 const slogan1 = document.querySelector(".slogan_1");
 const slogan2 = document.querySelector(".slogan_2");
@@ -96,13 +97,13 @@ const observer3 = new IntersectionObserver(
         lstFlare5.forEach((flareNode, index) => {
           timeoutEffect.push(
             setTimeout(() => {
-              flareNode.classList.add("flare-effect-active2");
+              flareNode.classList.add("flare-effect-active");
             }, index * 150 + 300)
           );
         });
       } else {
         lstFlare5.forEach((flareNode) => {
-          flareNode.classList.remove("flare-effect-active2");
+          flareNode.classList.remove("flare-effect-active");
         });
         timeoutEffect.forEach((timeout) => {
           clearTimeout(timeout);
@@ -149,6 +150,19 @@ function flareEffect(isIntersecting) {
       );
     } else {
       flareNode.classList.remove("flare-effect-active");
+    }
+  });
+  lstFlipCard.forEach((flipCard, index) => {
+    console.log(flipCard);
+    if (isIntersecting) {
+      flipCard.classList.add("flip-card-active");
+      timeoutEffect.push(
+        setTimeout(() => {
+          flipCard.classList.remove("flip-card-active");
+        }, index * 650 + 750)
+      );
+    } else {
+      flipCard.classList.remove("flip-card-active");
     }
   });
 }
